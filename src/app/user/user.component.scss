@@ -13,7 +13,7 @@ mat-card {
     width: 100%;
     border-collapse: collapse;
     tr {
-        border-bottom: 1px solid rgba(0,0,0, 0.4);
+        border-bottom: 2px solid rgba(0,0,0, 0.4);
         &:first-child{
             cursor: unset;
             &:hover{
