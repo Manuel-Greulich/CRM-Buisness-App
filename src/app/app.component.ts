@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { AuthGuardService } from './auth-guard.service';
+// import { AuthService } from './auth.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +9,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'simple-crm';
+
+  constructor(public Auth: AuthGuardService) {}
+
+  logOut() {
+    this.Auth.logOut();
+  }
 }
