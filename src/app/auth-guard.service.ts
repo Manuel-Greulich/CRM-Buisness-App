@@ -8,13 +8,12 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 })
 export class AuthGuardService implements CanActivate {
 
-  constructor(private auth: AngularFireAuth, private router: Router, private _snackBar: MatSnackBar) {}
-
+  constructor(public auth: AngularFireAuth, public router: Router, public _snackBar: MatSnackBar) {}
   async canActivate(
     route: ActivatedRouteSnapshot, 
     state: RouterStateSnapshot): Promise<boolean | UrlTree> {
-      const user = await this.auth.currentUser;
-      const isAuthenticated = user ? true : false;
+      let user = await this.auth.currentUser;
+      let isAuthenticated = user ? true : false;
       if (!isAuthenticated) {
         this.openSnackBar('Please login to use Simple CRM!');
         this.router.navigate(['/login']);
@@ -59,4 +58,6 @@ export class AuthGuardService implements CanActivate {
       })
       ;
   }
+
+ 
 }

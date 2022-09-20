@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { keepUnstableUntilFirst } from '@angular/fire';
+import { Auth, user } from '@angular/fire/auth';  
 import { AuthGuardService } from './auth-guard.service';
 // import { AuthService } from './auth.service';
 
@@ -9,10 +11,16 @@ import { AuthGuardService } from './auth-guard.service';
 })
 export class AppComponent {
   title = 'simple-crm';
-
   constructor(public Auth: AuthGuardService) {}
 
   logOut() {
     this.Auth.logOut();
   }
+
+  toggle(){
+    
+  }
+  
+
+
 }
